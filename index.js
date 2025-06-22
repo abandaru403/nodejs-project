@@ -1,6 +1,9 @@
 const express = require('express');
-const app = express();
-const port = process.env.PORT || 3000;
+const router = express.Router();
 
-app.get('/', (req, res) => res.send('Hello from NodeJs Azure DevOps!'));
-app.listen(port, () => console.log(`App listening on port ${port}`));
+/* GET home page. */
+router.get('/', (req, res) => {
+  res.render('index', { title: 'Node.js App on Azure DevOps' });
+});
+
+module.exports = router;

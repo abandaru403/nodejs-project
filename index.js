@@ -1,9 +1,12 @@
+// app.js
 const express = require('express');
-const router = express.Router();
+const app = express();
+const port = 3000;
 
-/* GET home page. */
-router.get('/', (req, res) => {
-  res.render('index', { title: 'Node.js App on Azure DevOps' });
+app.get('/', (req, res) => {
+  res.send('Hello from Express!');
 });
 
-module.exports = router;
+app.listen(port, () => {
+  console.log(`Express server running at http://localhost:${port}`);
+});

@@ -1,12 +1,11 @@
-// app.js
 const express = require('express');
 const app = express();
-const port = 3000;
 
 app.get('/', (req, res) => {
-  res.send('Hello from Express!');
+  res.send('Hello from Azure App Service on Linux!');
 });
 
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log(`Express server running at http://localhost:${port}`);
+  console.log(`Server is running on port ${port}`);
 });
